@@ -1,0 +1,26 @@
+1）Install VS-Extension Live Server
+
+2）GitHub Pages for this repository activated --- 有了新的改动，自动deploy (间隔时间大概是秒级到分钟级这个区间)
+
+3）textContent 可以识别 ${price} ，但是无法识别 <br>, 因此下面的语句其实是不会换行的；
+document.getElementById('L1P').textContent = 
+    `This is a paragraph to show the price: $${price} 
+    <br>
+    and the type of name: ${typeof myname}`;
+
+4）上面的例子如果要换行，需要改成
+document.getElementById('L1P').innerHTML = 
+    `This is a paragraph to show the price: $${price} 
+    <br>
+    and the type of name: ${typeof myname}`;
+
+5）像其它的字符变量一样 +=  是可以用的
+     document.getElementById('L1P').textContent += 
+        `\n
+        Line 1: This is the first line.
+        \n
+        Line 2: This is the second line.
+        \n
+        Line 3: This is the third line.`;
+6）像其它的字符变量一样 replace  是可以用的
+document.getElementById('L1P').innerHTML = document.getElementById('L1P').textContent.replace(/\n/g, '<br>');
