@@ -1,3 +1,30 @@
+const decreaseBtn = document.getElementById('decreaseBtn');
+const resetBtn = document.getElementById('resetBtn');
+const increaseBtn = document.getElementById('increaseBtn');
+const countLabel = document.getElementById('countLabel');
+
+let count = 0;
+increaseBtn.onclick = function () {
+    count++;
+    updateInput("increaseBtn");
+}
+
+decreaseBtn.onclick = function () {
+    count--;
+    updateInput("decreaseBtn");
+}
+
+resetBtn.onclick = function () {
+    count=0;
+    updateInput("resetBtn");
+}
+
+function updateInput(action) {
+    document.getElementById('L1Username').value = action;
+    countLabel.textContent = count;
+    document.getElementById('L1Age').value = count;
+};
+
 let outputHTML;
 let username, age;
 

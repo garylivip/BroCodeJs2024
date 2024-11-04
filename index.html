@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="L1Div">
-        <label for="L1Text">Username/Age:</label>
+    <label for="btnContainer" id="countLabel">0</label><br>
+    <div id="btnContainer">
+        <button id="decreaseBtn" class="buttons">decrease</button>
+        <button id="resetBtn" class="buttons">reset</button>
+        <button id="increaseBtn" class="buttons">increase</button>
+    </div>
+    <div id="L1Div">        
+        <br><label for="L1Text">Action/Number:</label>
         <input type="text" id="L1Username" >
         <input type="text" id="L1Age" >
         <button id="L1Button">Submit</button>
