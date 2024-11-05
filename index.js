@@ -201,3 +201,32 @@ for(let i=0; i<=10; i+=2){
         console.log(i);
     }    
 }
+
+const minNum = 50;
+const maxNum = 100;
+const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+let guess;
+let attempts = 0;
+let running = true;
+
+while (running) {
+    guess = Number(window.prompt(`Please enter a number between ${minNum} and ${maxNum}`));
+    console.log(guess, typeof guess);
+    if (isNaN(guess)) {
+        alert("Please enter a valid number");
+        continue;
+    } else if (guess < minNum || guess > maxNum) {
+        alert(`Please enter a number between ${minNum} and ${maxNum}`);
+        continue;
+    } else if (guess < answer) {
+        alert("Please enter a higher number");
+    } else if (guess > answer) {
+        alert("Please enter a lower number");
+    } else {
+        alert(`Congratulations! You have guessed the number ${answer} in ${attempts} attempts.`);
+        running = false;
+    }
+    attempts++;
+}
+
+
