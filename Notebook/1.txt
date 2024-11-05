@@ -1,6 +1,6 @@
 1）Install VS-Extension Live Server
 
-2）GitHub Pages for this repository activated --- 有了新的改动，自动deploy (间隔时间大概是秒级)
+2）GitHub Pages for this repository activated --- 有了新的改动，自动deploy (间隔时间大概是秒级 - 分钟级)
 
 3）textContent 可以识别 ${price} ，但是无法识别 <br>, 因此下面的语句其实是不会换行的；
 document.getElementById('L1P').textContent = 
