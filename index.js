@@ -142,3 +142,62 @@ console.log(stringTest3.includes("G"));
 // includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。
 console.log(stringTest3.padEnd(20,"-"));
 // padEnd() 方法用于在字符串的末尾添加指定数量的字符，以便字符串达到指定长度。第一个参数是长度，第二个参数是填充的字符
+
+let stringTest4 = "gArYlI" ; 
+
+stringTest4 = stringTest4.trim().charAt(0).toUpperCase() + stringTest4.trim().slice(1).toLowerCase();
+console.log(stringTest4);
+
+const PI = 3.14159;
+
+if (PI == "3.14159") {
+    console.log("That is PI");    
+} else {
+    console.log("That is NOT PI");    
+}
+
+if (PI === "3.14159") {
+    console.log("That is PI");    
+} else {
+    console.log("That is NOT PI");    
+}
+
+if (PI != "3.14159") {
+    console.log("That is NOT PI");    
+} else {
+    console.log("That is PI");    
+}
+
+if (PI !== "3.14159") {
+    console.log("That is NOT PI");    
+} else {
+    console.log("That is PI");    
+}
+
+// let stringTest5;
+
+// while (stringTest5==="" || stringTest5===null || stringTest5===undefined) {
+//     stringTest5 = window.prompt("Please enter your name", "Gary") ;    
+// }
+// // while 会先判断条件，然后再执行
+
+// do {
+//     stringTest5 = window.prompt("Please enter your name", "Gary") ;    
+// } while (stringTest5==="" || stringTest5===null || stringTest5===undefined)
+// // do while 会先执行一次，然后再判断条件
+
+for(let i=0; i<=10; i+=2){
+    if (i === 6) {
+        continue
+    } else {
+        console.log(i);
+    }    
+}
+
+for(let i=0; i<=10; i+=2){
+    if (i === 6) {
+        break;
+    } else {
+        console.log(i);
+    }    
+}
