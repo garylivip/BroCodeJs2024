@@ -1,10 +1,10 @@
 body{
     text-align: center;
 }
-#countLabel{
+#countLabel, #rolldiceLabel, .Labels{
     display: block;
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
     font-family: Arial, Helvetica, sans-serif;
 }
 #btnContainer{
@@ -12,7 +12,7 @@ body{
 }
 .buttons{
     padding: 10px 20px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: white;
     background-color: hsl(214, 100%, 70%);
     border-radius: 5px;

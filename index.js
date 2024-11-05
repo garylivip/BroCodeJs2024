@@ -54,7 +54,42 @@ function onclickL1Button() {
     outputHTML += `<br> Math.sqrt(2) is:  ${Math.sqrt(2)}` ;    
     outputHTML += `<br> Math.abs(-2) is:  ${Math.abs(-2)}` ;    
     outputHTML += `<br> Math.sign(-3.14159) is:  ${Math.sign(-3.14159)}` ; 
-
     document.getElementById('L1P').innerHTML = outputHTML; 
 }
 
+document.getElementById('rolldiceBtn').onclick = function() {
+    document.getElementById('rolldiceLabel1').innerHTML = Math.floor(Math.random()*6) + 1;
+    document.getElementById('rolldiceLabel2').innerHTML = Math.floor(Math.random()*6) + 1;
+    document.getElementById('rolldiceLabel3').innerHTML = Math.floor(Math.random()*6) + 1;
+    document.getElementById('rolldiceLabel4').innerHTML = Math.floor(Math.random()*6) + 1;
+    document.getElementById('rolldiceLabel5').innerHTML = Math.floor(Math.random()*6) + 1;
+    document.getElementById('rolldiceLabel6').innerHTML = Math.floor(Math.random()*6) + 1;
+}
+
+let tage= 17;
+let yourStatus = (tage >=18 ? 'You are an adult' : 'You are a minor');
+console.log(yourStatus);
+
+switch (tage) {
+    case 20:
+        console.log('You are 20 years old');
+        break;
+    case 21:
+        console.log('You are 21 years old');
+        break;
+    default:
+        console.log('You are x years old');
+        break;
+}
+
+switch (true) {
+    case tage >= 18:
+        console.log('You are an adult');
+        break;
+    case tage < 18:
+        console.log('You are a minor');
+        break;
+    default:
+        console.log('You are x years old');
+        break;
+}
