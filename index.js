@@ -53,7 +53,7 @@ function onclickL1Button() {
     outputHTML += `<br> Math.pow(2,3) is:  ${Math.pow(2,3)}` ;
     outputHTML += `<br> Math.sqrt(2) is:  ${Math.sqrt(2)}` ;    
     outputHTML += `<br> Math.abs(-2) is:  ${Math.abs(-2)}` ;    
-    outputHTML += `<br> Math.sign(-3.14159) is:  ${Math.sign(-3.14159)}` ; 
+    outputHTML += `<br> Math.sign(-3.14159) is:  ${Math.sign(-3.14159)}` ;     
     document.getElementById('L1P').innerHTML = outputHTML; 
 }
 
@@ -93,3 +93,52 @@ switch (true) {
         console.log('You are x years old');
         break;
 }
+
+let stringTest = "Gary.li@sap.com"
+console.log(stringTest.charAt(1));
+console.log(stringTest.indexOf("a"));
+console.log(stringTest.lastIndexOf("a"));
+// lastIndexOf 该方法将从后向前检索字符串，但返回是从起始位置 (0) 开始计算子字符串最后出现的位置。 看它是否含有字符串。
+// 所以上面的例子里： 第一个 返回1， 第二个返回9
+console.log(stringTest.lastIndexOf("a", 8));
+// 所以上面的例子里： 返回1， 因为从第8个位置开始向前检索，第一个a是在第1个位置
+console.log(stringTest.lastIndexOf("m"));
+console.log(stringTest.lastIndexOf("m", 8));
+// 所以上面的例子里： 第一个 返回14， 第二个返回-1，因为从第8个位置开始向前检索，没有找到m
+console.log(stringTest.indexOf("m"));
+console.log(stringTest.length);
+// length 是从1开始计算的，而index是从0开始计算的
+
+let stringTest2 = " Gary.li  @   sap.com "
+console.log(stringTest2.indexOf("m"));
+console.log(stringTest2.length);
+// 空格也是一个字符，所以长度是22， index是20
+console.log(stringTest2.trim().length);
+// trim() 方法用于删除字符串的头尾空格, 所以中间的空格不会被删除
+
+let stringTest3 = "Gary.li@sap.com"
+console.log(stringTest3.slice(5, 7));
+// start 5, end 7, 包含start, 但是不包括end，所以返回的是 5, 6
+console.log(stringTest3.slice(5));
+// start 5, 没有end，所以返回的是 5 到最后
+console.log(stringTest3.slice(-3, -1));
+// start -3, end -1, 包含start, 但是不包括end，所以返回的是 -3, -2
+console.log(stringTest3.slice(-3));
+// start -3, 没有end，所以返回的是 -3 到最后
+console.log(stringTest3.split("@"));
+let arrayTest = stringTest3.split("@");
+console.log(arrayTest[0].split("."));
+console.log(arrayTest[1].split("."));
+// split() 方法用于把一个字符串分割成字符串数组。返回的是一个数组
+console.log(stringTest3.repeat(3));
+// repeat() 方法用于复制字符串，返回一个新的字符串，包含原字符串的指定次数的副本。
+console.log(stringTest3.replace("sap", "SAP"));
+// replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+console.log(stringTest3.startsWith("G"));
+// startsWith() 方法用于检测字符串是否以指定的子字符串开始。
+console.log(stringTest3.endsWith("G"));
+// endsWith() 方法用于检测字符串是否以指定的子字符串结尾。
+console.log(stringTest3.includes("G"));
+// includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。
+console.log(stringTest3.padEnd(20,"-"));
+// padEnd() 方法用于在字符串的末尾添加指定数量的字符，以便字符串达到指定长度。第一个参数是长度，第二个参数是填充的字符
