@@ -1,6 +1,5 @@
 body{
     text-align: left;
-    columns: 3;
 }
 #countLabel, #rolldiceLabel, .Labels{
     display: block;

@@ -345,3 +345,22 @@ function combineStrings(...strings) {
 
 console.log(combineStrings("Hello", "World", "!"));
 console.log(combineStrings(plants[0], "World", "!"));
+
+function rollDice() {
+    let numOfDice = document.getElementById('diceTextbox').value;
+    let values = [];
+    let imanges = [];
+    for (let index = 0; index < numOfDice; index++) {
+        let diceValue = Math.floor(Math.random() * 6) + 1;
+        values.push(diceValue);
+        imanges.push(`<img 
+            src="images/Dice-${diceValue}.png" 
+            alt="dice" 
+            width="100px" 
+            margin="5px" 
+            height="100">`);
+    }
+  
+    document.getElementById('diceResult').textContent = `dice: ${values.join(", ")}`;
+    document.getElementById('diceImage').innerHTML = imanges.join(" ");
+}
