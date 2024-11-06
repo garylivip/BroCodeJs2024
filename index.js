@@ -364,3 +364,46 @@ function rollDice() {
     document.getElementById('diceResult').textContent = `dice: ${values.join(", ")}`;
     document.getElementById('diceImage').innerHTML = imanges.join(" ");
 }
+
+function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numberChars = "0123456789";
+    const symbolChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+    let allowedChars = "";
+    let password = "";
+
+    allowedChars += (includeLowercase ? lowercaseChars : "");
+    allowedChars += (includeUppercase ? uppercaseChars : "");
+    allowedChars += (includeNumbers ? numberChars : "");
+    allowedChars += (includeSymbols ? symbolChars : "");
+
+    if (allowedChars === "") {
+        return "At least one type of character should be selected";
+    };
+
+    if (length < 6) {
+        return "Password length should be at least 6 characters";
+    }
+
+    for (let i = 0; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * allowedChars.length);
+        password += allowedChars[randomIndex];
+    }
+
+    return password;
+
+};
+const passwordLength = 12;
+const includeLowercase = false;
+const includeUppercase = false;
+const includeNumbers = false;
+const includeSymbols = false;
+
+const myPassword = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+
+console.log("Generated password is:", myPassword);
+
+
