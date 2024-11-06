@@ -7,27 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label id="rolldiceLabel1" class="Labels">0</label>
-    <label id="rolldiceLabel2" class="Labels">0</label>
-    <label id="rolldiceLabel3" class="Labels">0</label>
-    <label id="rolldiceLabel4" class="Labels">0</label>
-    <label id="rolldiceLabel5" class="Labels">0</label>
-    <label id="rolldiceLabel6" class="Labels">0</label>
+    <div>
+        <div>
+            <h1>Temperature conversion:</h1>
+            <input type="number" id="tempTextbox" value="0"><br>
+            <input type="radio" name="Temperature" id="toFahrenheit" checked>
+            <label for="toFahrenheit">Celsius ➡️ Fahrenheit</label>
+            <input type="radio" name="Temperature" id="toCelsius">
+            <label for="toCelsius">Fahrenheit ➡️ Celsius</label><br>
+            <button type="Button" onclick="convert()" class="buttons">Submit</button>
+            <p id="result">Select a unit</p>
+        </div><br>
 
-    <div id="rolldiceContainer">
-        <button id="rolldiceBtn" class="buttons">roll a dice</button>
-    </div>    
-    <label for="btnContainer" id="countLabel">0</label><br>
-    <div id="btnContainer">
-        <button id="decreaseBtn" class="buttons">decrease</button>
-        <button id="resetBtn" class="buttons">reset</button>
-        <button id="increaseBtn" class="buttons">increase</button>
-    </div>
-    <div id="L1Div">        
-        <br><label for="L1Text">Action/Number:</label>
-        <input type="text" id="L1Username" >
-        <input type="text" id="L1Age" >
-        <button id="L1Button">Submit</button>
+        <div>
+            <label id="rolldiceLabel1" class="Labels">0</label>
+            <label id="rolldiceLabel2" class="Labels">0</label>
+            <label id="rolldiceLabel3" class="Labels">0</label>
+            <label id="rolldiceLabel4" class="Labels">0</label>
+            <label id="rolldiceLabel5" class="Labels">0</label>
+            <label id="rolldiceLabel6" class="Labels">0</label>    
+            <button id="rolldiceBtn" class="buttons">roll a dice</button>
+        </div><br>
+
+        <div id="btnContainer">
+            <label for="btnContainer" id="countLabel">0</label><br>
+            <button id="decreaseBtn" class="buttons">decrease</button>
+            <button id="resetBtn" class="buttons">reset</button>
+            <button id="increaseBtn" class="buttons">increase</button>
+        </div><br>
+
+        <div id="L1Div">        
+            <br><label for="L1Text">Action/Number:</label><br>
+            <input type="text" id="L1Username" ><br>
+            <input type="text" id="L1Age" ><br>
+            <button id="L1Button" class="buttons">Submit</button>
+        </div>
     </div>
 
     <script src="index.js"></script>

@@ -207,7 +207,9 @@ const maxNum = 100;
 const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 let guess;
 let attempts = 0;
-let running = true;
+
+let running = false;
+// 为了不pop up window, 先设为false
 
 while (running) {
     guess = Number(window.prompt(`Please enter a number between ${minNum} and ${maxNum}`));
