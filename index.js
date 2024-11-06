@@ -231,4 +231,17 @@ while (running) {
     attempts++;
 }
 
+tempTextbox = document.getElementById('tempTextbox');
+resultTemp = document.getElementById('resultTemp');
+toFahrenheit = document.getElementById('toFahrenheit');
+toCelsius = document.getElementById('toCelsius');
 
+function convertTemp (){
+    if (toFahrenheit.checked) {
+        resultTemp.textContent = String(tempTextbox.value * 9/5 + 32) + "℉";        
+    } else if(toCelsius.checked) {
+        resultTemp.textContent = String((tempTextbox.value - 32) * 5/9) + "℃";    
+    } else {
+        resultTemp.textContent = "Please select a conversion type";
+    }
+}

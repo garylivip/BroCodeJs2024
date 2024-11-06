@@ -11,12 +11,12 @@
         <div>
             <h1>Temperature conversion:</h1>
             <input type="number" id="tempTextbox" value="0"><br>
-            <input type="radio" name="Temperature" id="toFahrenheit" checked>
+            <input type="radio" name="Temperature" id="toFahrenheit" >
             <label for="toFahrenheit">Celsius ➡️ Fahrenheit</label>
             <input type="radio" name="Temperature" id="toCelsius">
             <label for="toCelsius">Fahrenheit ➡️ Celsius</label><br>
-            <button type="Button" onclick="convert()" class="buttons">Submit</button>
-            <p id="result">Select a unit</p>
+            <button type="Button" onclick="convertTemp()" class="buttons">Submit</button>
+            <p id="resultTemp"></p>
         </div><br>
 
         <div>
