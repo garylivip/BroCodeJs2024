@@ -303,3 +303,45 @@ console.log(letters4);
 
 let bigArray = [...plants, ...numbers, ...newPlants,...plants[0]];
 console.log(bigArray);
+
+const veg1 = "broccoli";
+const veg2 = "cauliflower";
+const veg3 = "cabbage";
+const veg4 = "kale";
+
+function listVegetables(...vegs) {
+    console.log(vegs);    
+    console.log(...vegs); 
+    return [...vegs];
+    // return [...vegs] = return vegs;
+}
+
+const vegetables = listVegetables(veg1, veg2, veg3, veg4);
+console.log(vegetables);
+// ... 是剩余参数，可以把多个参数合并成一个数组 (rest parameter)(...args)
+
+function sumNumbers(...numbers) {
+    let result = 0;
+    for (let number of numbers) {
+        result += number;
+    }
+    return result;
+}
+
+console.log(sumNumbers(1, 2, 3, 4, 5));
+
+function getAverage(...numbers) {
+    let result = 0;
+    for (let number of numbers) {
+        result += number;
+    }
+    return result / numbers.length;
+}
+console.log(getAverage(1, 2, 3, 4, 5));
+
+function combineStrings(...strings) {
+    return strings.join(" *-* ");
+}
+
+console.log(combineStrings("Hello", "World", "!"));
+console.log(combineStrings(plants[0], "World", "!"));
