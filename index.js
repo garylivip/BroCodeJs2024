@@ -282,3 +282,24 @@ console.log(plants, plants.length);
 console.log(plants.indexOf("cabbage"));
 console.log("sort.reverse.return",plants.sort().reverse());
 console.log("sort.reverse",plants);
+
+let numbers = [1, 2, 3, 4, 5];
+let maxNum2 = Math.max(numbers);
+console.log(maxNum2);
+let maxNum3 = Math.max(...numbers);
+console.log(maxNum3);
+let maxNum4 = [...numbers].join("-");
+console.log(maxNum3);
+// ... 是展开运算符，可以把数组展开成单个元素
+
+let letters = [...plants[0]];
+console.log(letters);
+let letters2 = plants[0].split("");
+console.log(letters);
+let letters3 = [...plants[0]].join("-");
+console.log(letters3);
+let letters4 = plants[0].split("").join("-");
+console.log(letters4);
+
+let bigArray = [...plants, ...numbers, ...newPlants,...plants[0]];
+console.log(bigArray);
