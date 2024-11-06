@@ -245,3 +245,40 @@ function convertTemp (){
         resultTemp.textContent = "Please select a conversion type";
     }
 }
+
+const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+console.log(plants);
+console.log(plants.pop());
+console.log(plants);
+console.log(plants.push('carrot'));
+console.log(plants);
+console.log(plants.unshift('vegetableA','vegetableB'));
+console.log(plants);
+
+let newPlants = plants.map(plant => {
+    return plant.toUpperCase();    
+});
+
+plants.forEach(plant => {
+    console.log(plant);
+});
+
+newPlants.forEach(plant => {
+    console.log("forEach", plant);
+});
+
+for (let i=0; i<plants.length; i++) {
+    console.log("i<plants.length", plants[i]);
+}
+
+for (let plant of plants) {
+    console.log("let plant of plants:", plant);
+}
+
+console.log(plants.toString());
+console.log(plants.with(1, "potato"));
+console.log(plants.shift());
+console.log(plants, plants.length);
+console.log(plants.indexOf("cabbage"));
+console.log("sort.reverse.return",plants.sort().reverse());
+console.log("sort.reverse",plants);
