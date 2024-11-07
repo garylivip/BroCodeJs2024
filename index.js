@@ -578,3 +578,22 @@ function Car(make, model, year) {
 
 const car1 = new Car("Toyota", "Corolla", 2021);
 car1.sayHello();
+
+class Product{
+    constructor(name, price, quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    totalValue() {
+        return this.price * this.quantity;
+    }
+    displayProduct() {
+        console.log(`Product: ${this.name}, 
+            Price: $${this.price}, 
+            Quantity: ${this.quantity}, 
+            Total Value: $${this.totalValue()}`);
+    }
+}
+const product1 = new Product("Apple", 1.99, 10);
+product1.displayProduct();
