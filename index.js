@@ -564,3 +564,17 @@ const person2 = {
 person2.sayHello();
 person2.eat();
 console.log(person2.name);
+console.log(this);
+
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.sayHello = function() {
+        console.log(`Hello, I am a ${this.year} ${this.make} ${this.model}`);
+    }
+
+}
+
+const car1 = new Car("Toyota", "Corolla", 2021);
+car1.sayHello();
