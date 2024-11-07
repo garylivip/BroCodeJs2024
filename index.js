@@ -594,6 +594,17 @@ class Product{
             Quantity: ${this.quantity}, 
             Total Value: $${this.totalValue()}`);
     }
+    static displayMessage() {
+        console.log("This is a static method");
+    }
+
+    get_displayMessage() {
+        Product.displayMessage();
+    }
 }
 const product1 = new Product("Apple", 1.99, 10);
 product1.displayProduct();
+// product1.displayMessage(); 
+// product1 is an instance of Product, so it can't call static method; Product can call static method
+Product.displayMessage();
+product1.get_displayMessage();
