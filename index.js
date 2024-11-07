@@ -406,4 +406,56 @@ const myPassword = generatePassword(passwordLength, includeLowercase, includeUpp
 
 console.log("Generated password is:", myPassword);
 
+function func1(callback, msg) {
+    console.log("func1", msg);
+    callback();
+}
 
+function func2(callback) {
+    console.log("func2");
+    callback();
+}
+
+function func3(msg) {
+    console.log("func3", msg);
+}
+
+func1(() => {
+    func2(() => {
+        func3("hello from func3");
+    });
+}, "Hello");
+
+setTimeout(() => {
+    console.log("Hello - setTimeout");    
+    goodbye("Goodbye - setTimeout");
+}, 0);
+
+helloCallback(()=>{goodbye("Goodbye +++")});
+
+function helloCallback(callback) {
+    console.log("Hello"); 
+    callback();   
+}
+function goodbye(msg) {
+    console.log("Goodbye", msg);    
+}
+// setTimeout 以及后面代码的执行顺序是: 
+// helloCallback -> console.log("Hello") 
+// -> goodbye -> console.log("Goodbye", msg) 
+// -> console.log("Hello - setTimeout") 
+// -> goodbye -> console.log("Goodbye - setTimeout")
+// setTimeout 会在所有代码执行完之后再执行, 即使时间是0
+
+let numbers2 = [1, 2, 3, 4, 5];
+
+numbers2.forEach(doubleNumbers);
+numbers2.forEach(displayNumbers);
+
+function doubleNumbers(elementx, index, array) {
+    array[index] = elementx * 2;
+}
+
+function displayNumbers(element, index, array) {
+    console.log(`Element at index ${index} is ${element} in array of ${array}`);
+}
