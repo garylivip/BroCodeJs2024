@@ -460,7 +460,7 @@ function displayNumbers(element, index, array) {
     console.log(`Element at index ${index} is ${element} in array of ${array}`);
 }
 
-let numbers3 = [1, 2, 3, 4, 5];
+let numbers3 = [1, 2, 3, 4, 5,6,7,8,9,10];
 const cubes = numbers3.map(cubesNumbers);
 function cubesNumbers(elementx, index, array) {
     array[index] = elementx * 2;
@@ -483,3 +483,36 @@ console.log(dates[0].toTimeString());
 console.log(dates[0].toUTCString());
 console.log(dates[0].toLocaleDateString());
 // toDateString() 方法以易读的形式返回日期对象的日期部分
+
+let numbers4 = [1, 2, 3, 4, 5,6,7,8,9,10];
+function isEven(num) {
+    return num % 2 === 0;
+}
+function isOdd(num) {
+    return num % 2 !== 0;
+}
+let numbers5 = numbers4.filter(isEven);
+let numbers6 = numbers4.filter(isOdd);
+console.log(numbers4);
+console.log(numbers5);
+console.log(numbers6);
+
+const prices = [100, 200, 300, 400, 500, 50, 75, 125];
+
+const total = prices.reduce(sumPrices);
+
+function sumPrices(total, price) {
+    return total + price;
+}
+
+const maxPrice = prices.reduce(getMaxPrice);
+const minPrice = prices.reduce(getMinPrice);
+function getMaxPrice(max, price) {
+    return max > price ? max : price;
+}
+function getMinPrice(min, price) {
+    return min < price ? min : price;
+}
+console.log(total);
+console.log(maxPrice);
+console.log(minPrice);
