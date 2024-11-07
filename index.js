@@ -608,3 +608,34 @@ product1.displayProduct();
 // product1 is an instance of Product, so it can't call static method; Product can call static method
 Product.displayMessage();
 product1.get_displayMessage();
+
+class Food extends Product {
+    constructor(name, price, quantity, category) {
+        super(name, price, quantity);
+        this.category = category;
+    }
+    displayFood() {
+        console.log(`Food: ${this.name}, 
+            Price: $${this.price}, 
+            Quantity: ${this.quantity}, 
+            Total Value: $${this.totalValue()},
+            Category: ${this.category}`);
+    }
+    displayProduct() {
+        super.displayProduct();
+        console.log(`Food: ${this.name}, 
+            Price: $${this.price}, 
+            Quantity: ${this.quantity}, 
+            Total Value: $${this.totalValue()},
+            Category: ${this.category}`);
+    }
+    static displayMessage() {
+        super.displayMessage();
+        console.log("This is a static method for Food");    
+    }
+}
+
+const food1 = new Food("Apple", 1.99, 10, "Fruit");
+food1.displayFood();
+food1.displayProduct();
+Food.displayMessage();
