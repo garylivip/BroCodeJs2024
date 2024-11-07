@@ -516,3 +516,19 @@ function getMinPrice(min, price) {
 console.log(total);
 console.log(maxPrice);
 console.log(minPrice);
+
+const helloFunc = function() {
+    console.log("Hello function expression");
+};
+
+helloFunc();
+
+setTimeout(() => {
+    console.log("Hello function expression in a setTimeout");
+}, 0);
+
+let numbers7 = [1, 2, 3, 4, 5,6,7,8,9,10];
+const squares = numbers7.map(function(element) {
+    return Math.pow(element, 2);
+});
+console.log(squares);
