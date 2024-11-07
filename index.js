@@ -459,3 +459,27 @@ function doubleNumbers(elementx, index, array) {
 function displayNumbers(element, index, array) {
     console.log(`Element at index ${index} is ${element} in array of ${array}`);
 }
+
+let numbers3 = [1, 2, 3, 4, 5];
+const cubes = numbers3.map(cubesNumbers);
+function cubesNumbers(elementx, index, array) {
+    array[index] = elementx * 2;
+    // 原数组被赋值改变，不会影响 elementx
+    return Math.pow(elementx, 3);    
+}
+console.log(cubes);
+console.log(numbers3);
+// map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+
+const dates = [new Date(), new Date(2021, 0, 1), new Date(2021, 1, 1), new Date(2021, 2, 1)];
+const dateStrings = dates.map(formatDates);
+function formatDates(date) {
+    const parts = date.toDateString().split(" ");
+    return `${parts[1]} ${parts[2]}, ${parts[3]}`;
+}
+console.log(dateStrings[0]);
+console.log(dates[0].toDateString());
+console.log(dates[0].toTimeString());
+console.log(dates[0].toUTCString());
+console.log(dates[0].toLocaleDateString());
+// toDateString() 方法以易读的形式返回日期对象的日期部分
