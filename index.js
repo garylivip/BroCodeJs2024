@@ -532,3 +532,9 @@ const squares = numbers7.map(function(element) {
     return Math.pow(element, 2);
 });
 console.log(squares);
+
+const helloFunc2 = (name, age) => {
+    console.log("Hello arrow function");
+    console.log(`Hello ${name}, you are ${age} years old`);
+};
+helloFunc2("Gary", 18);
