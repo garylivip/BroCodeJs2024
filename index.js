@@ -538,3 +538,29 @@ const helloFunc2 = (name, age) => {
     console.log(`Hello ${name}, you are ${age} years old`);
 };
 helloFunc2("Gary", 18);
+
+const person1 = {    
+    name: "Gary Young",
+    age: 18,
+    isEmployed: true,
+    sayHello: function() {
+        console.log(`Hello ${this.name}, you are ${this.age} years old`);
+    },
+    eat: () => {
+        console.log("I like eating fruits");
+    }
+}
+const person2 = {
+    name: "John Doe",
+    age: 38,
+    isEmployed: false,
+    sayHello: function() {
+        console.log(`Hello ${this.name}, you are ${this.age} years old`);
+    },
+    eat: () => {    
+        console.log("I like eating vegetables");
+    }
+}
+person2.sayHello();
+person2.eat();
+console.log(person2.name);
