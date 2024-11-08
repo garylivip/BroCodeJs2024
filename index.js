@@ -614,7 +614,28 @@ class Food extends Product {
         super(name, price, quantity);
         this.category = category;
     }
+    set category(value) {
+        if (value === "") {
+            console.log("Category cannot be empty");
+        } else {            
+            this._category = value;
+        }
+    }
+    get category() {
+        return `Property from get method ${this._category}` ;
+    }
+    set privateProperty(value) {
+        this._privateProperty = value;
+    }
+    get privateProperty() {
+        return this._privateProperty !== undefined 
+            && this._privateProperty !== null
+            && this._privateProperty !== ""
+        ? this._privateProperty 
+        : "Set initial value for this property";
+    }
     displayFood() {
+        super.displayProduct();
         console.log(`Food: ${this.name}, 
             Price: $${this.price}, 
             Quantity: ${this.quantity}, 
@@ -633,9 +654,60 @@ class Food extends Product {
         super.displayMessage();
         console.log("This is a static method for Food");    
     }
+    get doesNotExist() {
+        return "Property does not exist";
+    }
 }
 
 const food1 = new Food("Apple", 1.99, 10, "Fruit");
 food1.displayFood();
 food1.displayProduct();
 Food.displayMessage();
+food1.category = "";
+food1.displayFood();
+food1._category = "Vegetable - changed again";
+console.log(food1._category);
+console.log(food1.category);
+console.log(food1.doesNotExist);
+food1.privateProperty = "";
+console.log(food1.privateProperty);
+
+let paragraph = 'The quick brown , fox jumps over the lazy dog. It barked.😄';
+let regex = /[A-C,a-c,Z,z,\ud83d,*,]/g;
+let found = paragraph.match(regex);
+console.log(found);
+
+regex = /(lazy)|a/;
+found = paragraph.match(regex);
+console.log(found);
+
+regex = /^\w+/;
+// 数字、26个英文字母或者下划线组成的字符串：^\w+
+paragraph = 'The quick brown fox jumps over the lazy dog. It barked.😄！！！';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+
+regex = /[\u4e00-\u9fa5]/;
+// 匹配中文字符的正则表达式：[\u4e00-\u9fa5]
+paragraph = '测试';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+
+regex = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+// 电子邮件地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+paragraph = "test+jj@example-xx.yy.coxm";
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+
+regex = /^\s|\s$/;
+// 匹配以空格开头或结尾的字符串：^\s|\s$
+paragraph = ' The quick brown fox jumps over the lazy dog. ';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+
+regex = /^[1-9]\d{5}(18|19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/;
+// 中国身份证号码：^[1-9]\d{5}(18|19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$
+paragraph = '11010519491231002X';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+
+regex = /\/$/;
+paragraph = 'https://example.com/';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
+paragraph = 'https://example.com';
+regex.test(paragraph) ? console.log("Matched") : console.log("Not matched");
